@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Creative Corner Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>The Creative Corner 🎨</h1>
+            <p>An enhanced suite of mini-tools for your creative spark.</p>
+            <nav>
+                <button data-target="palette" class="active">API Palette Generator</button>
+                <button data-target="pixel-art">Pixel Art Canvas</button>
+                <button data-target="haiku">Haiku Generator</button>
+                <button data-target="pattern">CSS Pattern Generator</button>
+                <button data-target="prompt">Story Prompt Generator</button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="project" id="palette">
+                <h2>AI-Powered Palette Generator</h2>
+                <button id="generate-palette-btn" class="primary-btn">Generate Palette</button>
+                <div class="palette-container"></div>
+                <div id="copy-tooltip">Copied!</div>
+            </section>
+
+            <section class="project" id="pixel-art" hidden>
+                <h2>Pixel Art Canvas</h2>
+                <div class="controls">
+                    <label for="color-picker">Brush color:</label>
+                    <input type="color" id="color-picker" value="#FFFFFF">
+                    <button id="clear-grid-btn">Clear</button>
+                    <a id="export-btn" class="primary-btn">Export as PNG</a>
+                </div>
+                <canvas id="pixel-canvas" width="400" height="400"></canvas>
+            </section>
+
+            <section class="project" id="haiku" hidden>
+                <h2>Random Haiku Generator</h2>
+                <button id="generate-haiku-btn" class="primary-btn">Create a new poem</button>
+                <div class="haiku-container card"></div>
+            </section>
+
+            <section class="project" id="pattern" hidden>
+                <h2>CSS Pattern Generator</h2>
+                <div class="pattern-display card"></div>
+                <div class="pattern-controls card">
+                    <div><label>Size:</label><input type="range" id="size-slider" min="10" max="100" value="20"></div>
+                    <div><label>Color 1:</label><input type="color" id="p-color-1" value="#ff8c69"></div>
+                    <div><label>Color 2:</label><input type="color" id="p-color-2" value="#4a47a3"></div>
+                </div>
+                <textarea class="css-output" rows="3" readonly title="Generated CSS code"></textarea>
+            </section>
+
+            <section class="project" id="prompt" hidden>
+                <h2>Story Prompt Generator</h2>
+                <button id="generate-prompt-btn" class="primary-btn">Get a new prompt</button>
+                <div class="prompt-container card"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
